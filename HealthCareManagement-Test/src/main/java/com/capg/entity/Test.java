@@ -1,28 +1,69 @@
 package com.capg.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "Test_Data")
-public class Test {
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+public class Test 
+{
 	@Id
-	private int id;
-	private String name;
+	@Column(name = "test_id")
+	private Integer testId;
+	@OneToOne
+    @JoinColumn(name = "center_id")
+	private Diagnosticcenter diagnosticcenter;
+	@Column(name = "test_name")
+	private String test_name;
+	@Column(name = "price")
+	private int price;
 	
+	public Test() {	}
+	
+
+	public Test(Integer testId, Diagnosticcenter diagnosticcenter, String test_name,  int price) {
+		super();
+		this.testId = testId;
+		this.diagnosticcenter = diagnosticcenter;
+		this.test_name = test_name;
+		
+		this.price = price;
+	}
+
+
+	public Integer getTestId() {
+		return testId;
+	}
+
+	public void setTestId(Integer testId) {
+		this.testId = testId;
+	}
+
+	public Diagnosticcenter getDiagnosticcenter() {
+		return diagnosticcenter;
+	}
+
+	public void setDiagnosticcenter(Diagnosticcenter diagnosticcenter) {
+		this.diagnosticcenter = diagnosticcenter;
+	}
+
+	public String getTest_name() {
+		return test_name;
+	}
+
+	public void setTest_name(String test_name) {
+		this.test_name = test_name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	
 }

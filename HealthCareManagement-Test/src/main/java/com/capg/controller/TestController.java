@@ -1,17 +1,18 @@
 package com.capg.controller;
 
 
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.capg.entity.Test;
 import com.capg.service.TestService;
-@CrossOrigin(origins = "http://localhost:4200")
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
 @RestController
 public class TestController 
 {
@@ -19,14 +20,22 @@ public class TestController
 	TestService testService;
 	public void setTestService(TestService testService)
 	{
-		this.testService=testService;
+		this.testService = testService;
 	}
 	
-	@GetMapping("/getTests")
-	   public List<Test> getTests()
+	@DeleteMapping("/deleteTest/{testId}")
+	public String deleteBook(@PathVariable int testId)
+	{
+	   return testService.deleteTest(testId); 
+	}
+	
+	@PostMapping(value="/addTest",consumes="application/json")
+	   public ResponseEntity<String> insertTest(@RequestBody()Test test)
 	   {
-		   return testService.getTests();
+		   String message="Test Inserted Successfully";
+		   if(testService.insertTest(test)==null)
+			   message="Test Insertion Failed";
+		   return new ResponseEntity<String>(message,HttpStatus.BAD_REQUEST);
 	   }
-
-
+	
 }
