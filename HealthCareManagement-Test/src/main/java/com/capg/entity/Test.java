@@ -12,24 +12,18 @@ public class Test
 	@Id
 	@Column(name = "test_id")
 	private Integer testId;
-	@OneToOne
-    @JoinColumn(name = "center_id")
-	private Diagnosticcenter diagnosticcenter;
 	@Column(name = "test_name")
 	private String test_name;
-	@Column(name = "price")
-	private int price;
 	
 	public Test() {	}
 	
 
-	public Test(Integer testId, Diagnosticcenter diagnosticcenter, String test_name,  int price) {
+	public Test(Integer testId, String test_name) {
 		super();
 		this.testId = testId;
-		this.diagnosticcenter = diagnosticcenter;
 		this.test_name = test_name;
 		
-		this.price = price;
+		
 	}
 
 
@@ -41,13 +35,6 @@ public class Test
 		this.testId = testId;
 	}
 
-	public Diagnosticcenter getDiagnosticcenter() {
-		return diagnosticcenter;
-	}
-
-	public void setDiagnosticcenter(Diagnosticcenter diagnosticcenter) {
-		this.diagnosticcenter = diagnosticcenter;
-	}
 
 	public String getTest_name() {
 		return test_name;
@@ -57,13 +44,7 @@ public class Test
 		this.test_name = test_name;
 	}
 
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
+	
 
 	
 }
