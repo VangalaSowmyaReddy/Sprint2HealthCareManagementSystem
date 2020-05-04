@@ -6,7 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-import com.cg.hcsAdmin.dto.Diagnosticcenter;
+import com.capg.entity.Diagnosticcenter;
+
 
 @Entity
 public class Test 
@@ -20,10 +21,8 @@ public class Test
     @JoinColumn(name = "center_id")
 	private Diagnosticcenter diagnosticcenter;
 	
-
-	public Test() {	}
 	
-
+	
 	public Test(Integer testId, String test_name, Diagnosticcenter diagnosticcenter) {
 		super();
 		this.testId = testId;
@@ -50,8 +49,6 @@ public class Test
      public Diagnosticcenter getDiagnosticcenter() {
  		return diagnosticcenter;
  	}
-
-
  	public void setDiagnosticcenter(Diagnosticcenter diagnosticcenter) {
  		this.diagnosticcenter = diagnosticcenter;
  	}

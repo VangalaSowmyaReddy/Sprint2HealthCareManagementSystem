@@ -8,5 +8,7 @@ import com.capg.entity.Test;
 @Service
 public interface TestDAO extends JpaRepository<Test, Integer>
 {
+
+	
 	
 }
