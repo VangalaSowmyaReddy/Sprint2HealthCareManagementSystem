@@ -15,6 +15,7 @@ public class Diagnosticcenter
 	@Column(name = "center_area")
 	private String centerArea;
 	
+	
 	public Diagnosticcenter() {	}
 
 	public Diagnosticcenter(Integer centerId, String centerName, String centerArea) {
