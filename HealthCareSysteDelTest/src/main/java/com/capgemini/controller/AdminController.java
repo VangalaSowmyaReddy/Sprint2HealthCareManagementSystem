@@ -1,4 +1,4 @@
-package com.cap.anurag.controller;
+package com.capgemini.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cap.anurag.service.AdminService;
+import com.capgemini.service.AdminService;
 
 @Service
 @RestController

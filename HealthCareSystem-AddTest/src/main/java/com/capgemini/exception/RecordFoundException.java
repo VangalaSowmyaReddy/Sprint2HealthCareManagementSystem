@@ -1,4 +1,4 @@
-package com.cap.anurag.exception;
+package com.capgemini.exception;
 
 public class RecordFoundException  extends RuntimeException{
 	 public RecordFoundException(String msg){

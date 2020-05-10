@@ -1,4 +1,4 @@
-package com.cap.anurag.entities;
+package com.capgemini.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

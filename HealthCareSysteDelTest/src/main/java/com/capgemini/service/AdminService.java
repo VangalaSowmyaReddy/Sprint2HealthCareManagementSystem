@@ -1,4 +1,4 @@
-package com.cap.anurag.service;
+package com.capgemini.service;
 
 public interface AdminService {
 

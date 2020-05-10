@@ -1,17 +1,15 @@
-package com.cap.anurag;
+package com.capgemini;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
-
 @EnableEurekaClient
 @SpringBootApplication
 
-public class HealthCareSystemApplication {
+public class HealthCareSysteDelTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HealthCareSystemApplication.class, args);
+		SpringApplication.run(HealthCareSysteDelTestApplication.class, args);
 	}
 
 }
