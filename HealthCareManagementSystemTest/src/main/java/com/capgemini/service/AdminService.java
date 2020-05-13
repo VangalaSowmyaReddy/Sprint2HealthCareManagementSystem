@@ -3,8 +3,8 @@ package com.capgemini.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.cap.anurag.entities.DiagnosticCentre;
-import com.cap.anurag.entities.Tests;
+import com.capgemini.entities.DiagnosticCentre;
+import com.capgemini.entities.Tests;
 
 public interface AdminService {
 

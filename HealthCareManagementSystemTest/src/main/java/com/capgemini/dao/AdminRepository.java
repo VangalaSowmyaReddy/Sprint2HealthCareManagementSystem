@@ -2,7 +2,7 @@ package com.capgemini.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cap.anurag.entities.DiagnosticCentre;
+import com.capgemini.entities.DiagnosticCentre;
 
 public interface AdminRepository  extends JpaRepository<DiagnosticCentre, String>{
 

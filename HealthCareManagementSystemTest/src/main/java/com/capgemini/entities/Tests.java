@@ -19,7 +19,7 @@ public class Tests {
 	@Id
 	@NotNull(message = "test Id must not be empty")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int testId;
+    private String testId;
 	
 	@NotEmpty(message = "test name must not be empty")
 	@Column(nullable=false)

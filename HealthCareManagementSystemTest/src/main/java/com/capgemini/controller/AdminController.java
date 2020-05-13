@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cap.anurag.entities.DiagnosticCentre;
-import com.cap.anurag.entities.Tests;
-import com.cap.anurag.exception.RecordFoundException;
-import com.cap.anurag.service.AdminService;
+import com.capgemini.entities.DiagnosticCentre;
+import com.capgemini.entities.Tests;
+import com.capgemini.exception.RecordFoundException;
+import com.capgemini.service.AdminService;
 
 
 @RestController

@@ -8,10 +8,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cap.anurag.dao.AdminDao;
-import com.cap.anurag.dao.AdminRepository;
-import com.cap.anurag.entities.DiagnosticCentre;
-import com.cap.anurag.entities.Tests;
+import com.capgemini.dao.AdminDao;
+import com.capgemini.dao.AdminRepository;
+import com.capgemini.entities.DiagnosticCentre;
+import com.capgemini.entities.Tests;
 
 @Service
 @Transactional
