@@ -1,4 +1,4 @@
-package com.cap.anurag.dao;
+package com.capgemini.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

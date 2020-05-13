@@ -1,4 +1,4 @@
-package com.cap.anurag;
+package com.capgemini;
 
 import org.springframework.boot.SpringApplication;
 
