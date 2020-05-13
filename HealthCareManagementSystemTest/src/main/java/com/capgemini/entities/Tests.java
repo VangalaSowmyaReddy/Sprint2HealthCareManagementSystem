@@ -18,7 +18,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Tests {
 	@Id
 	@NotNull(message = "test Id must not be empty")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int testId;
 	
 	@NotEmpty(message = "test name must not be empty")
