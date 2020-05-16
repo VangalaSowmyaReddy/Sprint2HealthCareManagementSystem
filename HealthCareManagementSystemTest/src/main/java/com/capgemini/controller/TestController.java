@@ -21,19 +21,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.entities.DiagnosticCentre;
 import com.capgemini.entities.Tests;
 import com.capgemini.exception.RecordFoundException;
-import com.capgemini.service.AdminService;
+import com.capgemini.service.TestService;
 
 
 @RestController
 @RequestMapping("/Test")
 @CrossOrigin(origins = "http://localhost:4200")
-public class AdminController {
+public class TestController {
 	@Autowired
-	AdminService service;
+	TestService service;
 	private Random rand = new Random();
 
 	@PostMapping("/create")
-	public ResponseEntity<Boolean> create(@RequestBody Tests test) {
+	public ResponseEntity<String> create(@RequestBody Tests test) {
 		System.out.println(test);
 		test.setTestId(Integer.toString(rand.nextInt(1000)));
 
@@ -54,10 +54,9 @@ public class AdminController {
 		}
 
 		service.addTest(test1);
-		return new ResponseEntity<>(true, HttpStatus.OK);
-
+		return new ResponseEntity<String>("Test is created Successfully", new HttpHeaders(), HttpStatus.OK);
+		
 	}
-
 	@GetMapping("/findCentre")
 	public ResponseEntity<List<DiagnosticCentre>> getCentres() {
 		List<DiagnosticCentre> list = service.getCentres();

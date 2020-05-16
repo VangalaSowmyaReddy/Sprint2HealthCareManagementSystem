@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.capgemini.entities.DiagnosticCentre;
 import com.capgemini.entities.Tests;
 
-public interface AdminService {
+public interface TestService {
 
 	Tests addTest(Tests test);
 

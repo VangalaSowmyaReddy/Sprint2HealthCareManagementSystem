@@ -8,20 +8,20 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capgemini.dao.AdminDao;
-import com.capgemini.dao.AdminRepository;
+import com.capgemini.dao.TestDao;
+import com.capgemini.dao.TestRepository;
 import com.capgemini.entities.DiagnosticCentre;
 import com.capgemini.entities.Tests;
 
 @Service
 @Transactional
-public class AdminServiceImpl implements AdminService {
+public class TestServiceImpl implements TestService {
 
 	@Autowired
-	AdminDao dao;
+	TestDao dao;
 
 	@Autowired
-	AdminRepository repo;
+	TestRepository repo;
 
 	@Override
 	public Tests addTest(Tests test) {

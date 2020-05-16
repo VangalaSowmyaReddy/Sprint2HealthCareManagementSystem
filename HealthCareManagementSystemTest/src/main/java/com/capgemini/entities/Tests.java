@@ -3,26 +3,21 @@ package com.capgemini.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "Test")
 public class Tests {
 	@Id
-	@NotNull(message = "test Id must not be empty")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String testId;
-	
-	@NotEmpty(message = "test name must not be empty")
-	@Column(nullable=false)
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@Column(name = "TestId")
+	private String testId;
+	@Column(name = "TestName")
 	private String testName;
 	
 	@ManyToOne

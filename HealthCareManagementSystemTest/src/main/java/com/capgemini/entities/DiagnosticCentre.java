@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name = "Diagnosticcentre")
+@Table(name = "diagnosticcentre")
 public class DiagnosticCentre {
 	@Id
 	@GeneratedValue(generator = "system-uuid")
