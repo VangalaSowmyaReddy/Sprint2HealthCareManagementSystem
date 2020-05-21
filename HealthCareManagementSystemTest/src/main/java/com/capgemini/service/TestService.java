@@ -1,26 +1,27 @@
 package com.capgemini.service;
 
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capgemini.dao.TestDAO;
+
 import com.capgemini.entities.Tests;
 
 @Service
 public class TestService 
 {
 	@Autowired
-	TestDAO tdao;
-	public void setTdao(TestDAO tdao)
+	Tests tdao;
+	public void setTdao(Tests tdao)
 	{
 		this.tdao = tdao;
 	}
 	
-	
 	public Tests addTest(Tests test)
 	{
-		return tdao.save(test);
+		return   tdao.save(test);
 	}
 	  
     public String deleteTest(int testId)
@@ -31,4 +32,3 @@ public class TestService
 
 
 	
-}
