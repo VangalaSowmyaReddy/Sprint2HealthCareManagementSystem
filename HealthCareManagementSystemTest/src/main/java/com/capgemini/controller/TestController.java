@@ -35,7 +35,7 @@ public class TestController
 	}
 	
 	@PostMapping(value="/addTest",consumes="application/json")
-	   public ResponseEntity<String> addTest(@RequestBody()Tests test)
+	   public ResponseEntity<String> addTest(@RequestBody()Test test)
 	   {
 		   String message="Test Inserted Successfully";
 		   if(testService.addTest(test)==null)
