@@ -3,22 +3,35 @@ package com.capgemini.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capg.dao.TestDAO;
+import com.capg.entity.Test;
 import com.capgemini.entities.DiagnosticCentre;
 import com.capgemini.entities.Tests;
 
-public interface TestService {
+@Service
+public class TestService 
+{
+	@Autowired
+	Tests tdao;
+	public void setTdao(Tests tdao)
+	{
+		this.tdao = tdao;
+	}
+	
+	
+	public Tests addTest(Tests test)
+	{
+		return ((Object) tdao).save(test);
+	}
+	  
+    public String deleteTest(int testId)
+	{
+	    	tdao.deleteById(testId);
+	    	return "test Deleted";
+	    	}
 
-	Tests addTest(Tests test);
 
-	List<DiagnosticCentre> getCentres();
-
-	List<Tests> getTests();
-
-	DiagnosticCentre findByCentreName(String centreName);
-
-	Optional<Tests> findBycentreNameAndTestName(String centreName, String testName);
-
-	void save(DiagnosticCentre centre);
-
-	void deleteTestById(String testId);
-}
+	

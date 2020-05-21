@@ -1,78 +1,64 @@
 package com.capgemini.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
+
+
+
 
 @Entity
 @Table(name = "Test")
-public class Tests {
+public class Tests 
+{
 	@Id
-	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	@Column(name = "TestId")
-	private String testId;
-	@Column(name = "TestName")
-	private String testName;
+	@Column(name = "test_id")
+	private Integer testId;
+	@Column(name = "test_name")
+	private String test_name;
+	@ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "center_id")
+	private Diagnosticcenter diagnosticcenter;
+
 	
-	@ManyToOne
-	@JoinColumn(name = "centre_id")
-	private DiagnosticCentre centre;
-
-	private String centreName;
-
-	public String getCentreName() {
-		return centreName;
-	}
-
-	public void setCentreName(String centreName) {
-		this.centreName = centreName;
-	}
-
-	public Tests() {
-
-	}
-
-	public DiagnosticCentre getCentre() {
-		return centre;
-	}
-
-	public void setCentre(DiagnosticCentre centre) {
-		this.centre = centre;
-	}
-
-	public String getTestId() {
+	public Tests() {	}
+	
+	public Tests(Integer testId, String test_name, Diagnosticcenter diagnosticcenter) {
+		super();
+		this.testId = testId;
+		this.test_name = test_name;
+		this.diagnosticcenter=diagnosticcenter;
+		}
+    public Integer getTestId() {
 		return testId;
 	}
 
-	public void setTestId(String testId) {
+	public void setTestId(Integer testId) {
 		this.testId = testId;
 	}
 
-	public Tests(String testName,DiagnosticCentre centreName) {
-		super();
-		this.testName = testName;
-		this.centre = centreName;
-		this.centreName = centreName.getCentreName();
+
+	public String getTest_name() {
+		return test_name;
+	
+	}
+     public void setTest_name(String test_name) {
+		this.test_name = test_name;
+		
 	}
 
-	public String getTestName() {
-		return testName;
+	public Diagnosticcenter getDiagnosticcenter() {
+		return diagnosticcenter;
 	}
 
-	public void setTestName(String testName) {
-		this.testName = testName;
+	public void setDiagnosticcenter(Diagnosticcenter diagnosticcenter) {
+		this.diagnosticcenter = diagnosticcenter;
 	}
 
-	@Override
-	public String toString() {
-		return "Tests [testId=" + testId + ", testName=" + testName + ", centre=" + centre + ", centreName="
-				+ centreName + "]";
-	}
-
-}
+	
+	
+ }
