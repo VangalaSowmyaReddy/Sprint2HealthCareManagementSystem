@@ -9,8 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
-
-
 @Entity
 @Table(name = "Test")
 public class Tests 
@@ -59,6 +57,4 @@ public class Tests
 		this.diagnosticcenter = diagnosticcenter;
 	}
 
-	
-	
- }
+}

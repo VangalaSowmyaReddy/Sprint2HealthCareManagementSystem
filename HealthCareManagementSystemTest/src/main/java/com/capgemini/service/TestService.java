@@ -6,9 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capg.dao.TestDAO;
-import com.capg.entity.Test;
-import com.capgemini.entities.DiagnosticCentre;
+
 import com.capgemini.entities.Tests;
 
 @Service
@@ -21,10 +19,9 @@ public class TestService
 		this.tdao = tdao;
 	}
 	
-	
 	public Tests addTest(Tests test)
 	{
-		return ((Object) tdao).save(test);
+		return   tdao.save(test);
 	}
 	  
     public String deleteTest(int testId)

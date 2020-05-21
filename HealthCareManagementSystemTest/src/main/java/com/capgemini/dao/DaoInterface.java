@@ -2,7 +2,7 @@ package com.capgemini.dao;
 
 import java.util.List;
 
-import com.capg.entity.Test;
+
 import com.capgemini.entities.Tests;
 
 public interface DaoInterface {
